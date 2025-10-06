@@ -1,0 +1,34 @@
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        if (num<2) return true;
+        long l=2, r=num/2;
+        while (l<=r) {
+            long mid=l+(r-l)/2;
+            long square=mid*mid;
+            if (square==num){
+                return true;
+            }
+            else if(square<num){
+                l=mid+1;
+            }
+            else{
+                r=mid-1;
+            }
+        }
+        return false;
+    }
+}
+
+
+OR
+
+
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        int a =(int)Math.sqrt(num);
+        if(a*a==num) {
+            return true;
+        }
+        return false;
+    }
+}
